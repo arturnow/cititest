@@ -10,18 +10,6 @@
 
 
 */
-
-
-var takeOrder = function (orderedNumber){
-	if(typeof orderedNumber !== 'number'){
-		console.info('Not number');
-	}
-	console.info('Jestem numerem');
-	
-	
-	return "total cost with commission"
-};
-
 var Broker = function(commission){
 	
 	if(commission instanceof Array){
@@ -49,3 +37,12 @@ Broker.prototype.getCommission = function(orderedNumber){
 
 	return commissionObj.commission;	
 };
+
+
+var BrokerageService = function(){
+	
+};
+
+BrokerageService.prototype.registerBroker = function(broker){
+	return broker instanceof Broker;
+}
