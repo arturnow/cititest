@@ -7,19 +7,25 @@
 4) There is commission in percetage
 5) Order can be splitted
 
-
-
 */
-var Broker = function(commission){
-	
+var Broker = function(commission, quote){	
 	if(commission instanceof Array){
 		this._commission = commission;
 	} else{
-		console.info('Tworze array');
 		this._commission = [{ 'range': 100,
 		 'commission' : commission}];	
-		 console.info(this._commission);
 	}
+	if(!quote)
+		quote=0;
+	
+	if(isNaN(quote)){
+		console.log('Invalid quote: ' + quote);
+		
+	} else if(quote <=0){
+		console.log('Quote cannot be negative');
+	}
+	
+	this._quote = quote;
 }
 
 Broker.prototype.calculareCost = function(ordredNumber){
@@ -37,12 +43,9 @@ Broker.prototype.getCommission = function(orderedNumber){
 
 	return commissionObj.commission;	
 };
-
-
-var BrokerageService = function(){
-	
+//Price * 
+Broker.prototype.getQuote = function(orderedNumber){
+	var commission = this.getCommission(orderedNumber);	
+	//console.info('Commision from getQuote ' + commission + ' and qoute ' + this._quote);
+	return parseFloat( ((orderedNumber * this._quote) * (1 + commission)).toFixed(4));
 };
-
-BrokerageService.prototype.registerBroker = function(broker){
-	return broker instanceof Broker;
-}
