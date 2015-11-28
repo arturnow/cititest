@@ -50,11 +50,11 @@ describe('Clients buys from service with two Brokers', function(){
 	});
 		
 	it('ClientA buys 130 for 201.975', function(){
-		expect( clientA.makeOrder(130, service)).toBe(201.975);
+		expect(clientA.makeOrder(130, service)).toBe(201.975);
 	});
 		
 	it('ClientB buys 60 for 93.48', function(){
-		expect( clientB.makeOrder(50, service)).toBe(93.48);
+		expect( clientB.makeOrder(60, service)).toBe(93.48);
 	});
 	
 });
