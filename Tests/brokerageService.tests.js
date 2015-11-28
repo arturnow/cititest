@@ -42,10 +42,12 @@ describe('Clients buys from service with two Brokers', function(){
 	});
 	
 	it('ClientB sells 80 for 124.64', function(){
+		//TODO: Implement sell
 		expect( clientB.makeOrder(80, service)).toBe(124.64);
 	});
 	
 	it('ClientA sells 70 for 109.06', function(){
+		//TODO: Implement sell
 		expect( clientC.makeOrder(70, service)).toBe(109.06);
 	});
 		
@@ -55,6 +57,15 @@ describe('Clients buys from service with two Brokers', function(){
 		
 	it('ClientB buys 60 for 93.48', function(){
 		expect( clientB.makeOrder(60, service)).toBe(93.48);
+	});
+	
+	it('Clients net positions', function(){
+		//TODO: Client A 296.156 Client B 0 Client C -109.06
+	});
+	
+	if('Digicoins transacted by Brokers', function(){
+		//TODO: Broker 1 80 Broker 2 460
+
 	});
 	
 });

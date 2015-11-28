@@ -44,12 +44,10 @@ BrokerageService.prototype.setOrder = function(orderedNumber){
 
 	var maxMoves = orderedNumber / 10;
 	var minQuote = undefined;
-	
 
 	var i = maxMoves >10 ? maxMoves - 10  : 0;
-	//maxMoves = maxMoves > 10 ? 10 : maxMoves;
 
-	for(i; i <= (maxMoves > 10 ? 10 : maxMoves); i++){ //Zacznijmy od prostego max 100	
+	for(i; i <= (maxMoves > 10 ? 10 : maxMoves); i++){	
 		var quote1 = this._registeredBrokers[0].getQuote(i * 10);
 		var quote2 = this._registeredBrokers[1].getQuote((maxMoves - i) * 10);
 		
@@ -59,10 +57,7 @@ BrokerageService.prototype.setOrder = function(orderedNumber){
 		} else if (total < minQuote){
 			minQuote = total;
 		}
-		//We need to know how much and how many
-		
 	};
 	
 	return minQuote;
-	
 }

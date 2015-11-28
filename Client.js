@@ -9,11 +9,11 @@ Client.prototype.makeOrder = function(coinNumber, brokerageService){
 		return;
 	};
 	
-	
 	var orderValue = brokerageService.setOrder(coinNumber);
 	
 	console.info(this._name + ' ordered ' + coinNumber + ' for ' + orderValue);
 	
+	//TODO: Implement sell
 	this._orders.push({
 		coinsNumber : coinNumber,
 		value : orderValue
