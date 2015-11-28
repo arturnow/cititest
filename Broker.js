@@ -32,7 +32,6 @@ var Broker = function(commission){
 		 'commission' : commission}];	
 		 console.info(this._commission);
 	}
-	
 }
 
 Broker.prototype.calculareCost = function(ordredNumber){
@@ -41,14 +40,12 @@ Broker.prototype.calculareCost = function(ordredNumber){
 
 Broker.prototype.getCommission = function(orderedNumber){
 	var commissionObj = undefined;
-	console.info(this._commission);
-	$.each(this._commission, function(element, index){
-		console.info('Właśnie przemierzam array');
-		
-		if(element.range <= orderedNumber 
+	this._commission.forEach(function(element) {
+		if(orderedNumber <= element.range  
 		&& (commissionObj === undefined || element.range <= commissionObj.range)){
 			commissionObj = element;
 		}
-	});
+	}, this);
+
 	return commissionObj.commission;	
 };
