@@ -1,4 +1,4 @@
-var BrokerageService = function(){
+function BrokerageService(){
 	this._registeredBrokers = [];
 };
 
@@ -43,7 +43,9 @@ BrokerageService.prototype.setOrder = function(orderedNumber){
 	}	
 
 	var maxMoves = orderedNumber / 10;
-	var minQuote = undefined;
+	var minQuote = undefined,
+		broker1order =0,
+		broker2order = 0;
 
 	var i = maxMoves >10 ? maxMoves - 10  : 0;
 
@@ -54,10 +56,17 @@ BrokerageService.prototype.setOrder = function(orderedNumber){
 		var total = parseFloat((quote1 + quote2).toFixed(4));
 		if(minQuote === undefined){
 			minQuote = total;
+			broker1order = i * 10;
+			broker2order = (maxMoves - i) * 10;
 		} else if (total < minQuote){
 			minQuote = total;
+			broker1order = i * 10;
+			broker2order = (maxMoves - i) * 10;
 		}
 	};
+	
+	this._registeredBrokers[0].makeOrder(broker1order);
+	this._registeredBrokers[1].makeOrder(broker2order);
 	
 	return minQuote;
 }

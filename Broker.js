@@ -8,7 +8,7 @@
 5) Order can be splitted
 
 */
-var Broker = function(commission, quote){	
+function Broker(commission, quote){	
 	if(commission instanceof Array){
 		this._commission = commission;
 	} else{
@@ -26,6 +26,7 @@ var Broker = function(commission, quote){
 	}
 	
 	this._quote = quote;
+	this._coinsOrdered = 0;
 }
 
 Broker.prototype.calculareCost = function(ordredNumber){
@@ -43,9 +44,16 @@ Broker.prototype.getCommission = function(orderedNumber){
 
 	return commissionObj.commission;	
 };
-//Price * 
+
 Broker.prototype.getQuote = function(orderedNumber){
 	var commission = this.getCommission(orderedNumber);	
-	//console.info('Commision from getQuote ' + commission + ' and qoute ' + this._quote);
 	return parseFloat( ((orderedNumber * this._quote) * (1 + commission)).toFixed(4));
+};
+
+Broker.prototype.makeOrder = function(orderedNumber){
+		this._coinsOrdered += orderedNumber;
+};
+
+Broker.prototype.reportOrderedCoinsNumber = function(){
+	return this._coinsOrdered;	
 };
