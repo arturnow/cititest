@@ -40,10 +40,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrokerageService.cs" />
+    <Compile Include="Client.cs" />
     <Compile Include="DigiCoinBroker.cs" />
     <Compile Include="CommissionEntry.cs" />
     <Compile Include="IBroker.cs" />
     <Compile Include="IBrokerageService.cs" />
+    <Compile Include="IClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -161,7 +161,7 @@ namespace DigiCoinServiceTEsts
             const decimal expected = 62.58m;
             var broker = new DigiCoinBroker(0.05m, 1.49m);
             //Act
-            var result = broker.GetQuoteForTransactoin(40);
+            var result = broker.GetQuoteForTransaction(40);
 
             //Assert
             Assert.AreEqual(expected, result);

@@ -67,7 +67,7 @@ namespace DigiCoinService
             return commissionValue;
         }
 
-        public decimal GetQuoteForTransactoin(int orderedNumber)
+        public decimal GetQuoteForTransaction(int orderedNumber)
         {
             var commisionForOrder = GetCommission(orderedNumber);
             return (orderedNumber*_quote)*(1 + commisionForOrder);

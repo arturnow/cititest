@@ -43,7 +43,7 @@ namespace DigiCoinService
             }
 
             var maxMoves = numberOfCoinsOrderd / 10;
-            decimal minQuote = 0;
+            decimal minQuote = -1;
             int broker1Order = 0, broker2Order = 0;
 
             var i = maxMoves > 10 ? maxMoves - 10 : 0;
@@ -51,8 +51,8 @@ namespace DigiCoinService
 
             for (; i <= (maxMoves > 10 ? 10 : maxMoves); i++)
             {
-                var quote1 = _registeredBrokers[0].GetQuoteForTransactoin(i * 10);
-                var quote2 = _registeredBrokers[1].GetQuoteForTransactoin((maxMoves - i) * 10);
+                var quote1 = _registeredBrokers[0].GetQuoteForTransaction(i * 10);
+                var quote2 = _registeredBrokers[1].GetQuoteForTransaction((maxMoves - i) * 10);
 
                 var total = quote1 + quote2;
                 if (minQuote == -1)

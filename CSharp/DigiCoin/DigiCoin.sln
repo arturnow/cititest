@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigiCoin", "DigiCoin.csproj", "{9292AA97-9DEB-42A2-80F3-672888AD71EF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigiCoinService", "..\DigiCoinService\DigiCoinService.csproj", "{3A20D8F4-3BFA-4693-820A-73E21C74DC6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigiCoinServiceTEsts", "DigiCoinServiceTEsts\DigiCoinServiceTEsts.csproj", "{D086C656-F2D9-4EA9-9519-DEB4D61F7E9D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigiCoinServiceTests", "DigiCoinServiceTEsts\DigiCoinServiceTests.csproj", "{D086C656-F2D9-4EA9-9519-DEB4D61F7E9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9292AA97-9DEB-42A2-80F3-672888AD71EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9292AA97-9DEB-42A2-80F3-672888AD71EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9292AA97-9DEB-42A2-80F3-672888AD71EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9292AA97-9DEB-42A2-80F3-672888AD71EF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3A20D8F4-3BFA-4693-820A-73E21C74DC6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3A20D8F4-3BFA-4693-820A-73E21C74DC6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A20D8F4-3BFA-4693-820A-73E21C74DC6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
