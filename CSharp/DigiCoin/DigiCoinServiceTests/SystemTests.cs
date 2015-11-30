@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DigiCoinService;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -155,15 +150,6 @@ namespace DigiCoinServiceTEsts
         public void ClientsReportsProperNetValues()
         {
 
-            this.ClientA_Buys_Test1();
-            this.ClientB_Buys_Test2();
-            this.ClientA_Buys_For_Test3();
-            this.ClientB_Buys_For_Test4();
-            this.ClientB_Sells_Test5();
-            this.ClientC_Sells_Test6();
-            this.ClientA_Buys_Test7();
-            this.ClientB_Sells_Test8();
-            /*
             _clientA.MakerOrder(10, OrderType.Buy);
             _clientB.MakerOrder(40, OrderType.Buy);
             _clientA.MakerOrder(50, OrderType.Buy);
@@ -172,7 +158,7 @@ namespace DigiCoinServiceTEsts
             _clientC.MakerOrder(70, OrderType.Sell);
             _clientA.MakerOrder(130, OrderType.Buy);
             _clientB.MakerOrder(60, OrderType.Sell);
-            */
+ 
             //assert
             Assert.AreEqual(_clientA.GetOrderNetValue(), 296.156m);
             Assert.AreEqual(_clientB.GetOrderNetValue(), 0m);
@@ -185,15 +171,6 @@ namespace DigiCoinServiceTEsts
         public void BrokerStatus()
         {
 
-            this.ClientA_Buys_Test1();
-            this.ClientB_Buys_Test2();
-            this.ClientA_Buys_For_Test3();
-            this.ClientB_Buys_For_Test4();
-            this.ClientB_Sells_Test5();
-            this.ClientC_Sells_Test6();
-            this.ClientA_Buys_Test7();
-            this.ClientB_Sells_Test8();
-            /*
             _clientA.MakerOrder(10, OrderType.Buy);
             _clientB.MakerOrder(40, OrderType.Buy);
             _clientA.MakerOrder(50, OrderType.Buy);
@@ -202,7 +179,7 @@ namespace DigiCoinServiceTEsts
             _clientC.MakerOrder(70, OrderType.Sell);
             _clientA.MakerOrder(130, OrderType.Buy);
             _clientB.MakerOrder(60, OrderType.Sell);
-            */
+   
             //assert
             Assert.AreEqual(_broker1.ReportTransactedNumber(), 80);
             Assert.AreEqual(_broker2.ReportTransactedNumber(), 460);
